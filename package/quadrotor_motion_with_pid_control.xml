@@ -1,0 +1,38 @@
+<library path="lib/libquadrotor_motion_with_pid_control">
+	<class name="quadrotor_motion_with_pid_control/BehaviorKeepHoveringWithPidControl" type="quadrotor_motion_with_pid_control::BehaviorKeepHoveringWithPidControl"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorKeepHoveringWithPidControl.
+		</description>
+	</class>
+    <class name="quadrotor_motion_with_pid_control/BehaviorRotateWithPidControl" type="quadrotor_motion_with_pid_control::BehaviorRotateWithPidControl"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorRotateWithPidControl.
+		</description>
+	</class>	
+	<class name="quadrotor_motion_with_pid_control/BehaviorKeepMovingWithPidControl" type="quadrotor_motion_with_pid_control::BehaviorKeepMovingWithPidControl"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorKeepMovingWithPidControl.
+		</description>
+	</class>	
+	<class name="quadrotor_motion_with_pid_control/BehaviorFollowPath" type="quadrotor_motion_with_pid_control::BehaviorFollowPath"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorFollowPath.
+		</description>
+	</class>
+	<class name="quadrotor_motion_with_pid_control/BehaviorQuadrotorPidMotionControl" type="quadrotor_motion_with_pid_control::BehaviorQuadrotorPidMotionControl"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorQuadrotorPidMotionControl.
+		</description>
+	</class>
+	<class name="quadrotor_motion_with_pid_control/BehaviorQuadrotorPidThrustControl" type="quadrotor_motion_with_pid_control::BehaviorQuadrotorPidThrustControl"
+		base_class_type="nodelet::Nodelet">
+		<description>
+			BehaviorQuadrotorPidThrustControl.
+		</description>
+	</class>			
+</library>

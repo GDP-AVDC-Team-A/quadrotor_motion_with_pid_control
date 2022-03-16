@@ -1,0 +1,39 @@
+<launch>
+	<arg name="robot_namespace"  default="drone0" />
+	<arg name="robot_config_path" 	default="$(env AEROSTACK_STACK)/configs" />
+  <arg name="frequency" 	default="150" />
+	
+<!-- Config file -->
+	<arg name="config_file" 	default="midlevel_autopilot.xml" />
+   
+<!--Subscribers -->
+  <arg name="estimated_speed" 	  default="self_localization/speed" />
+  <arg name="estimated_pose" 	    default="self_localization/pose" />
+  <arg name="imu" 	              default="sensor_measurement/imu" />
+  <arg name="roll_pitch" 	        default="actuator_command/roll_pitch" />
+  <arg name="altitude_yaw_rate" 	default="actuator_command/altitude_rate_yaw_rate" />
+  <arg name="flight_action" 	    default="actuator_command/flight_action" />
+
+<!--Publishers-->  
+  <arg name="command_rpy_thrust" 	default="actuator_command/roll_pitch_yaw_rate_thrust" />
+
+  <group ns="$(arg robot_namespace)">
+		  <node name="thrust_controller" pkg="thrust_controller_process" type="thrust_controller_process_main" output="screen">
+			      <param name="robot_namespace" value="$(arg robot_namespace)" type="string"/>
+            <param name="frequency" value="$(arg frequency)" type="double"/>
+			      <param name="robot_config_path" value="$(arg robot_config_path)" type="string"/>
+		        <param name="config_file" value="$(arg config_file)" type="string"/> 
+
+<!--Subscribers -->
+            <param name="estimated_speed"    value="$(arg estimated_speed)"      type="string"/> 
+            <param name="estimated_pose"     value="$(arg estimated_pose)"       type="string"/> 
+            <param name="imu"                value="$(arg imu)"                  type="string"/>
+            <param name="roll_pitch"         value="$(arg roll_pitch)"           type="string"/> 
+            <param name="altitude_yaw_rate"  value="$(arg altitude_yaw_rate)"    type="string"/>
+            <param name="flight_action"      value="$(arg flight_action)"        type="string"/> 
+
+<!--Publishers --> 
+            <param name="command_rpy_thrust" value="$(arg command_rpy_thrust)"   type="string"/>
+		  </node>
+	</group>
+</launch>

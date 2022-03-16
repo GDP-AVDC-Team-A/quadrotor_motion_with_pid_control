@@ -1,0 +1,31 @@
+# Thrust controller
+
+# Subscribed topics
+
+- **sensor_measurement/imu** ([sensor_msgs/Imu](http://docs.ros.org/melodic/api/sensor_msgs/html/msg/Imu.html))  
+Inertial Measurement Unit data.
+
+- **actuator_command/roll_pitch** ([geometry_msgs/PoseStamped](http://docs.ros.org/api/geometry_msgs/html/msg/PoseStamped.html))
+Actuator command for the multirotor specifying roll and pitch (the rest of values for <x, y, z, yaw> are discarded)
+
+- **actuator_command/altitude_rate_yaw_rate** ([geometry_msgs/TwistStamped](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/TwistStamped.html))     
+Actuator command for the multirotor specifying rates for altitude (d_z) and yaw (d_yaw) (the rest of values for <d_x, d_y, d_yaw, d_pitch, d_roll> are discarded).
+
+- **actuator_command/flight_action** ([aerostack_msgs/FlightActionCommand](https://bitbucket.org/visionaerialrobotics/aerostack_msgs/src/7c07e4317e20a1142226d513336a06a2ff585629/msg/FlightActionCommand.msg))      
+Flight command specifying a qualitative action of the robot (take off, hover or land). This command can be interpreted by some aerial platforms (e.g. Parrot drones) but it is ignored by others.
+
+- **self_localization/pose** ([geometry_msgs/PoseStamped](http://docs.ros.org/api/geometry_msgs/html/msg/PoseStamped.html))      
+Current pose of the vehicle.
+
+- **self_localization/speed** ([geometry_msgs/TwistStamped](http://docs.ros.org/lunar/api/geometry_msgs/html/msg/TwistStamped.html))     
+Current speed of the vehicle.
+
+# Published topics
+
+- **actuator_command/roll_pitch_yaw_rate_thrust** ([mav_msgs/RollPitchYawrateThrust](http://docs.ros.org/api/mav_msgs/html/msg/RollPitchYawrateThrust.html))           
+Actuator command for the multirotor specifying roll (rad), pitch (rad), yaw rate (rad/s) and thrust (N: Newtons).
+
+----
+# Contributors
+
+**Code maintainer:** Alberto Rodelgo
